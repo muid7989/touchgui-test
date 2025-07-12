@@ -2,8 +2,8 @@ let time;
 let frameCountBuffer = 0;
 let fps = 0;
 
-const CANVAS_W = 800;
-const CANVAS_H = 1200;
+const CANVAS_W = 960;
+const CANVAS_H = 1440;
 
 const BUTTON_W = CANVAS_W/4;
 const BUTTON_H = BUTTON_W/2;
