@@ -35,6 +35,7 @@ function setup() {
 
 	fileInput = createFileInput(handleFile);
 
+/*
 	gui = createGui();
 	gui.loadStyle("Seafoam");
 	gui.setTextSize(40);
@@ -42,7 +43,7 @@ function setup() {
 	downButton = buttonInit('↓', BUTTON_W, BUTTON_H, (CANVAS_W-BUTTON_W)/2, BUTTON_Y+BUTTON_H*2);
 	leftButton = buttonInit('←', BUTTON_W, BUTTON_H, (CANVAS_W-BUTTON_W*3)/2, BUTTON_Y+BUTTON_H);
 	rightButton = buttonInit('→', BUTTON_W, BUTTON_H, (CANVAS_W+BUTTON_W)/2, BUTTON_Y+BUTTON_H);
-
+*/
 }
 function buttonInit(text, w, h, x, y) {
 	let button = createButton(text, x, y, w, h);
@@ -64,16 +65,18 @@ function draw() {
 		fps = frameCount - frameCountBuffer;
 		frameCountBuffer = frameCount;
 	}
+/*
 	if (upButton.isPressed){
 		player.pos.y -= 5;
 	}
 	if (downButton.isPressed){
 		player.pos.y += 5;
 	}
+*/
 	stroke(255);
 	strokeWeight(3);
 	rect(player.pos.x, player.pos.y, PLAYER_SIZE);
-	drawGui();
+//	drawGui();
 	fill(255);
 	stroke(255);
 	textSize(16);
