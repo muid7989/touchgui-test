@@ -18,6 +18,9 @@ const DEBUG_VIEW_X = 40;
 const DEBUG_VIEW_Y = 20;
 const DEBUG_VIEW_H = 20;
 
+let fileInput;
+let img;
+
 function preload() {
 }
 function setup() {
@@ -30,6 +33,8 @@ function setup() {
 	player.pos.x = 200;
 	player.pos.y = 200;
 
+	fileInput = createFileInput(handleFile);
+
 	gui = createGui();
 	gui.loadStyle("Seafoam");
 	gui.setTextSize(40);
@@ -37,11 +42,20 @@ function setup() {
 	downButton = buttonInit('↓', BUTTON_W, BUTTON_H, (CANVAS_W-BUTTON_W)/2, BUTTON_Y+BUTTON_H*2);
 	leftButton = buttonInit('←', BUTTON_W, BUTTON_H, (CANVAS_W-BUTTON_W*3)/2, BUTTON_Y+BUTTON_H);
 	rightButton = buttonInit('→', BUTTON_W, BUTTON_H, (CANVAS_W+BUTTON_W)/2, BUTTON_Y+BUTTON_H);
+
 }
 function buttonInit(text, w, h, x, y) {
 	let button = createButton(text, x, y, w, h);
 	return button;
 }
+function handleFile(file) {
+	if (file.type == 'image') {
+		img = loadImage(file.data);
+	}else{
+		img = null;
+	}
+}
+
 function draw() {
 	background('blue');
 	let current = millis();
